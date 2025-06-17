@@ -1,0 +1,102 @@
+.profile-bg {
+  min-height: 100vh;
+  background-image: url('/white-marble.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.profile-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.profile-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.93);
+  border-radius: 28px;
+  box-shadow: 0 4px 24px rgba(38,166,154,0.13), 0 1.5px 8px rgba(0,0,0,0.07);
+  padding: 2.5rem 2.2rem 2.5rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 95vw;
+  gap: 1.2rem;
+}
+
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(38,166,154,0.10);
+  background: #fff;
+  margin-bottom: 1.2rem;
+}
+
+.profile-name {
+  font-size: 1.35rem;
+  font-weight: bold;
+  color: #1976d2;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.profile-email {
+  font-size: 1.05rem;
+  color: #607D8B;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.profile-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #90caf9 60%, #4dd0e1 100%);
+  color: #1565c0;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 36px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+.profile-btn:hover {
+  background: linear-gradient(135deg, #42a5f5 60%, #00bcd4 100%);
+  color: #fff;
+}
+
+.profile-edit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  gap: 0;
+}
+
+.profile-edit-input {
+  width: 90%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #b0bec5;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}

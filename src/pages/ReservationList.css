@@ -1,0 +1,46 @@
+.reservation-list-container {
+    padding: 2rem;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+  
+  .reservation-list-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .cancel-btn {
+    background: #e57373;
+    color: #fff;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .cancel-btn:hover {
+    background: #c62828;
+  }
+  

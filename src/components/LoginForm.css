@@ -1,0 +1,50 @@
+/* LoginForm.css */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/office-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-box {
+  background-color: white;
+  padding: 50px; /* ←ゆとりある余白に */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 360px; /* ←300px→360pxで少し大きく */
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px; /* ←少しゆとりを持たせた */
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px; /* ←文字も少し大きく */
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

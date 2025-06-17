@@ -1,0 +1,65 @@
+.calendarpage-container {
+  background-image: url('/white-marble.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 2.5rem 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendarpage-title {
+  color: #007bff;
+  font-size: 2.2rem;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.calendar-wrapper {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px 18px 32px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin: 0 auto;
+  min-height: 600px;
+}
+
+.rbc-toolbar {
+  margin-bottom: 18px !important;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.rbc-event {
+  font-size: 14px !important;
+  min-height: 22px;
+  margin-bottom: 3px;
+  padding: 3px 8px !important;
+  line-height: 1.5;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  white-space: normal !important;
+  word-break: break-all;
+  overflow: visible !important;
+  display: block !important;
+}
+
+.rbc-month-view, .rbc-time-view {
+  font-size: 15px;
+}
+
+.rbc-header {
+  font-size: 1rem;
+  padding: 8px 0;
+} 

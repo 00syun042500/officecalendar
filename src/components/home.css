@@ -1,0 +1,403 @@
+.home-container {
+    background-image: url('/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-title {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.logout-button {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-button-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    height: 80vh;
+    margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .home-button-row {
+        flex-direction: column;
+        gap: 2.5rem;
+        height: auto;
+        margin-top: 1.5rem;
+    }
+}
+
+.reserve-button {
+    font-size: 2rem;
+    width: 340px;
+    max-width: 90vw;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    box-shadow: 0 8px 28px rgba(38,166,154,0.13), 0 2px 8px rgba(0,0,0,0.08);
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, #f8fafc 60%, #e0f7fa 100%);
+    color: #222;
+    transition: box-shadow 0.18s, background 0.18s, color 0.18s, transform 0.13s;
+    cursor: pointer;
+    margin: 0;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+.reserve-button:focus {
+    outline: 4px solid #26a69a;
+    outline-offset: 2px;
+}
+.reserve-button:hover {
+    box-shadow: 0 16px 48px rgba(38,166,154,0.22), 0 8px 32px rgba(0,0,0,0.13);
+    background: linear-gradient(135deg, #e0f7fa 60%, #b2dfdb 100%);
+    color: #007bff;
+    transform: translateY(-3px) scale(1.04);
+}
+.reserve-btn-reserve {
+    background: linear-gradient(135deg, #e3f2fd 60%, #b2ebf2 100%);
+    color: #1976d2;
+}
+.reserve-btn-reserve:hover {
+    background: linear-gradient(135deg, #b2ebf2 60%, #e3f2fd 100%);
+    color: #1565c0;
+}
+.reserve-btn-list {
+    background: linear-gradient(135deg, #ece9f7 60%, #cfd8dc 100%);
+    color: #607D8B;
+}
+.reserve-btn-list:hover {
+    background: linear-gradient(135deg, #cfd8dc 60%, #ece9f7 100%);
+    color: #455a64;
+}
+.reserve-btn-calendar {
+    background: linear-gradient(135deg, #e0f2f1 60%, #b2dfdb 100%);
+    color: #00b894;
+}
+.reserve-btn-calendar:hover {
+    background: linear-gradient(135deg, #b2dfdb 60%, #e0f2f1 100%);
+    color: #00897b;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    height: 100%;
+}
+
+.button-icon {
+    width: 3em;
+    height: 3em;
+    object-fit: contain;
+    margin-right: 0.2em;
+    display: inline-block;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+}
+
+@media (max-width: 600px) {
+    .reserve-button {
+        width: 96vw;
+        min-width: 0;
+        font-size: 1.2rem;
+        height: 70px;
+        border-radius: 14px;
+    }
+    .button-icon {
+        width: 1.7em;
+        height: 1.7em;
+    }
+    .home-button-row {
+        gap: 1.2rem;
+    }
+}
+
+.calendar-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+/* 凡例のスタイル */
+.legend {
+    display: none;
+}
+
+.legend-item.green {
+    color: #00ff99;
+}
+.legend-item.yellow {
+    color: #ffe066;
+}
+.legend-item.red {
+    color: #ff6666;
+}
+
+/* カレンダーのイベントが月表示で消えないように */
+.rbc-event {
+    font-size: 13px !important;
+    min-height: 22px;
+    margin-bottom: 3px;
+    padding: 3px 8px !important;
+    line-height: 1.5;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    white-space: normal !important;
+    word-break: break-all;
+    overflow: visible !important;
+    display: block !important;
+}
+
+/* イベント同士の間隔を追加 */
+.rbc-event + .rbc-event {
+    margin-top: 3px;
+}
+
+/* カレンダーのセルの高さを広げる */
+.rbc-month-row {
+    min-height: 180px;
+}
+
+.rbc-month-row .rbc-row-content {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.rbc-date-cell {
+    padding-top: 8px;
+    padding-bottom: 4px;
+    background: rgba(255,255,255,0.95);
+    font-weight: bold;
+}
+
+.rbc-event-content {
+    white-space: normal !important;
+    word-break: break-all;
+    overflow: visible !important;
+    display: block !important;
+}
+
+/* スクロールバーのデザインを目立たなく */
+.rbc-row-content::-webkit-scrollbar {
+    width: 6px;
+    background: #eee;
+}
+
+.rbc-row-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+/* イベントの色分けを強調（念のため） */
+.rbc-event[style*='#ffb300'] { background: #ffe066 !important; color: #333 !important; }
+.rbc-event[style*='#e57373'] { background: #ff6666 !important; color: #fff !important; }
+.rbc-event[style*='#3174ad'] { background: #3174ad !important; color: #fff !important; }
+
+.home-welcome-area {
+    width: 100%;
+    max-width: 420px;
+    margin: 2.5rem auto;
+    padding: 2rem 1.2rem 2.2rem 1.2rem;
+    background: rgba(255,255,255,0.88);
+    border-radius: 24px;
+    box-shadow: 0 4px 24px rgba(38,166,154,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.home-welcome-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #1976d2;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home-motivation {
+    font-size: 1.15rem;
+    color: #26a69a;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+}
+
+.home-illust {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 18px;
+    margin: 0 auto 1.2rem auto;
+    box-shadow: 0 2px 12px rgba(38,166,154,0.08);
+    background: #fff;
+    display: block;
+}
+
+.home-quicklinks {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.quicklink-btn {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: none;
+    border-radius: 16px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    min-width: 140px;
+    text-align: center;
+    margin: 0;
+    outline: none;
+    white-space: nowrap;
+}
+.quicklink-btn:hover {
+    background: #bbdefb;
+}
+
+.home-button-row.under-welcome {
+    margin-top: 0.5rem;
+    gap: 1.2rem;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .home-button-row.under-welcome {
+        flex-direction: column;
+        gap: 1.2rem;
+        width: 100%;
+    }
+}
+
+.home-button-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.reserve-button {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    font-size: 1.25rem;
+    height: 64px;
+    border-radius: 18px;
+}
+
+.button-content {
+    justify-content: flex-start;
+    gap: 1.1em;
+}
+
+@media (max-width: 600px) {
+    .home-welcome-area {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+    .home-button-col {
+        gap: 0.8rem;
+    }
+    .reserve-button {
+        font-size: 1rem;
+        height: 52px;
+        border-radius: 12px;
+    }
+}
+
+.home-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #607D8B;
+    font-weight: bold;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.04em;
+}
+
+.home-main-layout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.profile-header-btn {
+    background: #00b894;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    white-space: nowrap;
+    height: 36px;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.profile-header-btn.logout {
+    background: #e57373;
+    margin-right: 0;
+}
+  

@@ -1,0 +1,5 @@
+.fc .fc-col-header-cell-cushion, /* 曜日（Sun, Mon...） */
+.fc .fc-daygrid-day-number,         /* 日付の数字 */
+.fc .fc-timegrid-axis-cushion {    /* 時間軸の数字 */
+  color: #111 !important;
+} 

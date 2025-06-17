@@ -1,0 +1,489 @@
+/* ReservationForm.css */
+
+.reservation-container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .reservation-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  select,
+  input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+.reservation-form-container {
+  min-height: 100vh;
+  background-image: url('/white-marble.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  position: relative;
+}
+
+.reservation-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.reservation-form-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.facility-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.facility-card-modern {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.1rem 0.5rem 1.1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.15s;
+  border: 2px solid transparent;
+  position: relative;
+  width: 160px;
+  min-width: 140px;
+  max-width: 180px;
+  margin: 0.8rem;
+}
+
+.facility-card-modern:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  transform: translateY(-2px) scale(1.03);
+  border: 2px solid #80cbc4;
+}
+
+.facility-card-modern.selected {
+  border: 2.5px solid #26a69a;
+  box-shadow: 0 6px 24px rgba(38,166,154,0.13);
+  background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+}
+
+.facility-image-modern {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  background: #f5f5f5;
+}
+
+.facility-name-modern {
+  font-weight: bold;
+  font-size: 1.08rem;
+  text-align: center;
+  color: #222;
+  margin-top: 0.2rem;
+}
+
+.facility-desc-modern {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 0.3rem;
+  text-align: center;
+  line-height: 1.4;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 0.3em 0.5em;
+  min-height: 1.7em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+@media (max-width: 600px) {
+  .facility-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .facility-image-modern {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.facility-category-block {
+  margin-bottom: 2.5rem;
+  padding: 1.2rem 0 0.5rem 0;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #f8fafc 60%, #f1f8e9 100%);
+  box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+}
+
+.facility-category-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #26a69a;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+  border-left: 5px solid #26a69a;
+  padding-left: 0.7em;
+  background: #e0f2f1;
+  border-radius: 0 8px 8px 0;
+  display: inline-block;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.stepper-bar-modern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2.5rem auto;
+  padding: 2.2rem 0 1.2rem 0;
+  max-width: 600px;
+  gap: 0.5rem;
+}
+
+.stepper-step-modern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  position: relative;
+}
+
+.stepper-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e0f2f1;
+  color: #26a69a;
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.3rem;
+  border: 2.5px solid #b2dfdb;
+  transition: background 0.2s, border 0.2s, color 0.2s;
+}
+
+.stepper-step-modern.active .stepper-circle {
+  background: #26a69a;
+  color: #fff;
+  border: 2.5px solid #26a69a;
+}
+
+.stepper-step-modern.done .stepper-circle {
+  background: #b2dfdb;
+  color: #fff;
+  border: 2.5px solid #26a69a;
+}
+
+.stepper-label {
+  font-size: 0.98rem;
+  color: #26a69a;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.stepper-step-modern.active .stepper-label {
+  color: #222;
+  font-weight: bold;
+}
+
+.stepper-line-modern {
+  flex: 1 1 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #b2dfdb 60%, #e0f2f1 100%);
+  margin: 0 0.2rem 0 0.2rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+  .stepper-bar-modern {
+    max-width: 98vw;
+    padding: 1.2rem 0 0.7rem 0;
+    gap: 0.2rem;
+  }
+  .stepper-step-modern {
+    min-width: 54px;
+  }
+  .stepper-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+  .stepper-label {
+    font-size: 0.85rem;
+  }
+}
+
+.people-card-modern {
+  max-width: 400px;
+  margin: 60px auto 0 auto;
+  padding: 40px 28px 32px 28px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(38,166,154,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.people-select-modern {
+  width: 100%;
+  min-width: 140px;
+  max-width: 220px;
+  font-size: 1.15rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: 1.5px solid #b2dfdb;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  background: #f8fafc;
+  color: #222;
+  margin-bottom: 0.5rem;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.people-select-modern:focus {
+  outline: none;
+  border: 2px solid #26a69a;
+  box-shadow: 0 2px 10px rgba(38,166,154,0.10);
+}
+
+@media (max-width: 600px) {
+  .people-card-modern {
+    max-width: 98vw;
+    padding: 22px 6vw 18px 6vw;
+  }
+  .people-select-modern {
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+.calendar-card-modern {
+  max-width: 1200px;
+  margin: 48px auto 0 auto;
+  padding: 56px 32px 38px 32px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(38,166,154,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  justify-content: center;
+}
+.legend-available {
+  color: #26a69a;
+  font-weight: bold;
+}
+.legend-unavailable {
+  color: #bbb;
+}
+
+.calendar-table-modern {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  min-width: 780px;
+  max-width: 1350px;
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  margin: 0 auto;
+}
+.calendar-table-modern th,
+.calendar-table-modern td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0;
+  height: 48px;
+  display: table-cell;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+}
+.calendar-table-modern th {
+  background: #e0f2f1;
+  color: #26a69a;
+  font-weight: bold;
+  border-bottom: 2px solid #b2dfdb;
+}
+.calendar-table-modern tr:last-child td {
+  border-bottom: none;
+}
+.calendar-slot-btn-modern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0 auto;
+  background: #e0f7fa;
+  border: 1.5px solid #26a69a;
+  color: #26a69a;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.calendar-slot-btn-modern.selected {
+  background: #26a69a;
+  color: #fff;
+  border: 1.5px solid #26a69a;
+}
+.calendar-slot-btn-modern:hover {
+  background: #b2dfdb;
+  color: #fff;
+}
+.calendar-slot-unavailable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  color: #bbb;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .calendar-card-modern {
+    max-width: 99vw;
+    padding: 18px 2vw 12px 2vw;
+  }
+  .calendar-table-modern th,
+  .calendar-table-modern td {
+    font-size: 0.92rem;
+    padding: 0.4em 0.2em;
+  }
+}
+
+.calendar-week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin-bottom: 0.7rem;
+}
+.calendar-week-nav span {
+  white-space: nowrap;
+}
+.calendar-week-btn {
+  background: #e0f2f1;
+  color: #26a69a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5em 1.2em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 1px 4px rgba(38,166,154,0.07);
+}
+.calendar-week-btn:hover {
+  background: #26a69a;
+  color: #fff;
+}
+
+.calendar-card-modern .step-prev-btn {
+  min-width: 220px;
+  max-width: 400px;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 1.1em 0;
+  margin: 0 auto;
+  display: block;
+}
+
+.confirm-card-modern, .complete-card-modern {
+  max-width: 500px;
+  margin: 60px auto 0 auto;
+  padding: 40px 28px 32px 28px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(38,166,154,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.confirm-list, .complete-list {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.confirm-item, .complete-item {
+  font-size: 1.1rem;
+  color: #222;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.8em 1em;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 1px 4px rgba(38,166,154,0.07);
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+.confirm-item span, .complete-item span {
+  color: #26a69a;
+  font-weight: bold;
+  min-width: 3.5em;
+  display: inline-block;
+}
+  
